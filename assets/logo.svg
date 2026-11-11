@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 50" width="240" height="50" fill="none">
+  <!-- Medical Care Symbol: stylized dual dynamic shield & cross -->
+  <defs>
+    <linearGradient id="indayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0d9488" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+  
+  <g transform="translate(6, 5)">
+    <!-- Rounded medical shield outline -->
+    <rect x="0" y="0" width="40" height="40" rx="10" fill="url(#indayaGrad)"/>
+    <!-- Medical Cross with heart touch -->
+    <path d="M20 10V30M10 20H30" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="28" cy="12" r="3.5" fill="#38bdf8" />
+  </g>
+  
+  <!-- Typography -->
+  <text x="56" y="27" font-family="'Plus Jakarta Sans', 'Manrope', 'Segoe UI', sans-serif" font-weight="800" font-size="22" letter-spacing="0.5" fill="#0f172a">
+    INDAYA
+    <tspan fill="#0d9488" font-weight="700">MED</tspan>
+  </text>
+  <text x="57" y="39" font-family="'Plus Jakarta Sans', 'Manrope', 'Segoe UI', sans-serif" font-weight="600" font-size="8" letter-spacing="1.2" fill="#64748b">
+    ЛЕЧЕНИЕ В ИНДИИ ИЗ ТУРКМЕНИСТАНА
+  </text>
+</svg>

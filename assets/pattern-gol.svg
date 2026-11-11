@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <g stroke="#065f46" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Основной восьмиугольный гёл -->
+    <path d="M80 18 L123 41 L146 80 L123 119 L80 142 L37 119 L14 80 L37 41 Z"/>
+    <!-- Внутренный ромб -->
+    <path d="M80 42 L118 80 L80 118 L42 80 Z"/>
+    <!-- Центральный медальон -->
+    <path d="M80 60 L100 80 L80 100 L60 80 Z" stroke-width="2"/>
+    <!-- Крючки по сторонам (классические концы гёля) -->
+    <path d="M14 80 l-6 -6 M14 80 l-6 6 M146 80 l6 -6 M146 80 l6 6"/>
+    <path d="M80 18 l-6 -7 M80 18 l6 -7 M80 142 l-6 7 M80 142 l6 7"/>
+    <!-- Малые ромбы по осям -->
+    <path d="M80 30 l7 7 -7 7 -7 -7 Z" stroke-width="1.8"/>
+    <path d="M80 116 l7 7 -7 7 -7 -7 Z" stroke-width="1.8"/>
+    <path d="M30 80 l7 7 -7 7 -7 -7 Z" stroke-width="1.8"/>
+    <path d="M124 80 l7 7 -7 7 -7 -7 Z" stroke-width="1.8"/>
+    <!-- Крест в центре -->
+    <path d="M80 72 v16 M72 80 h16" stroke-width="2"/>
+  </g>
+</svg>
