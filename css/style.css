@@ -70,6 +70,10 @@ body {
   overflow-x: clip;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 img, svg {
   display: block;
   max-width: 100%;
@@ -2423,7 +2427,7 @@ ul, ol {
   background: var(--white);
   border: 1px solid var(--slate-border);
   color: var(--navy);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-md);
@@ -2433,6 +2437,7 @@ ul, ol {
 }
 
 .scroll-top-btn.visible {
+  display: flex;
   opacity: 1;
   visibility: visible;
 }
@@ -2585,5 +2590,278 @@ ul, ol {
   .float-btn {
     padding: 12px;
     border-radius: 50%;
+  }
+  
+  /* Hero: кнопки во всю ширину, друг под другом */
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    padding: 15px 20px;
+  }
+  
+  /* Плавающие кнопки: компактнее и ближе к краю */
+  .floating-actions {
+    bottom: 16px;
+    right: 16px;
+    gap: 10px;
+  }
+  
+  .float-btn {
+    padding: 11px;
+  }
+  
+  .float-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Контент не прячется под плавающими кнопками */
+  .footer {
+    padding-bottom: 96px;
+  }
+  
+  /* Бургер-меню: скролл, крупные цели нажатия */
+  .nav-menu {
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px 20px 28px;
+  }
+  
+  .nav-menu .nav-link {
+    display: block;
+    width: 100%;
+    padding: 13px 4px;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+  }
+  
+  .nav-menu .nav-link:last-child {
+    border-bottom: none;
+  }
+  
+  /* Слайдер: удобные стрелки и точки */
+  .gallery-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+  
+  .gallery-dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .gallery-dots {
+    gap: 10px;
+  }
+  
+  /* Чипы городов — крупнее для нажатия */
+  .geo-city-chip {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+  
+  /* Отступы секций от краёв */
+  .section-header {
+    margin-bottom: 32px;
+  }
+  
+  .scope-section,
+  .hospitals-section,
+  .treatments-section,
+  .advantages-section,
+  .stories-section,
+  .faq-section {
+    padding: 64px 0;
+  }
+}
+
+/* ==========================================================================
+   Mobile refinements: ≤560px
+   ========================================================================== */
+@media (max-width: 560px) {
+  /* CTA в шапке дублирует Hero — прячем, чтобы не сжимать логотип и бургер */
+  .nav-actions .btn {
+    display: none;
+  }
+
+  .nav-container {
+    height: 64px;
+  }
+
+  .nav-menu {
+    top: 64px;
+    max-height: calc(100vh - 64px);
+  }
+
+  .brand-logo img {
+    height: 40px;
+    max-width: 150px;
+  }
+
+  .hero {
+    min-height: calc(100vh - 64px);
+  }
+}
+
+/* ==========================================================================
+   Mobile refinements: ≤480px
+   ========================================================================== */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-title {
+    font-size: 1.7rem;
+    letter-spacing: -0.4px;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  .hero-badge {
+    font-size: 0.78rem;
+    padding: 7px 12px;
+    gap: 8px;
+  }
+
+  .hero {
+    padding: 28px 0 44px;
+  }
+
+  .hero-card {
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 13px 20px;
+    font-size: 0.95rem;
+  }
+
+  .form-wrapper {
+    padding: 18px;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    padding: 12px 14px;
+    font-size: 16px; /* защита от зума iOS Safari */
+  }
+
+  .messenger-radio {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .scope-card {
+    padding: 18px;
+  }
+
+  .gallery-slide img {
+    height: 170px;
+  }
+
+  .gallery-slide figcaption {
+    font-size: 0.72rem;
+    padding: 5px 10px;
+    max-width: calc(100% - 24px);
+  }
+
+  .float-btn {
+    padding: 10px;
+  }
+
+  .float-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .floating-actions {
+    bottom: 14px;
+    right: 14px;
+    gap: 8px;
+  }
+
+  .scroll-top-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .faq-question {
+    padding: 16px;
+    font-size: 0.98rem;
+  }
+
+  .contact-card {
+    padding: 22px;
+  }
+
+  .footer {
+    padding-top: 44px;
+    padding-bottom: 92px;
+  }
+
+  .footer-disclaimer {
+    padding: 22px 0;
+    font-size: 0.74rem;
+  }
+}
+
+/* ==========================================================================
+   Mobile refinements: ≤400px (очень маленькие экраны)
+   ========================================================================== */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-lead {
+    font-size: 0.95rem;
+  }
+
+  .section-title {
+    font-size: 1.35rem;
+  }
+
+  .hero-badge {
+    font-size: 0.72rem;
+    padding: 6px 10px;
+  }
+
+  .hero-actions .btn {
+    padding: 14px 16px;
+    font-size: 0.92rem;
+  }
+
+  .gallery-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .city-code {
+    font-size: 1.2rem;
+  }
+
+  .brand-logo img {
+    height: 36px;
+    max-width: 130px;
   }
 }
