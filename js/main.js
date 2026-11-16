@@ -1,5 +1,5 @@
 /**
- * INDAYA MED - Medical Travel Turkmenistan -> India
+ * ADYL ÇÖZGÜT - Medical assistance: Turkmenistan -> India
  * Core JavaScript Logic & Interactivity
  */
 
@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- МОБИЛЬНОЕ МЕНЮ (БУРГЕР) ---
   const burgerBtn = document.getElementById('burgerBtn');
   const navMenu = document.getElementById('navMenu');
-  const navLinks = document.querySelectorAll('.nav-link');
 
   if (burgerBtn && navMenu) {
     burgerBtn.addEventListener('click', () => {
@@ -29,12 +28,30 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.toggle('no-scroll');
     });
 
-    navLinks.forEach(link => {
+    navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         burgerBtn.classList.remove('open');
         navMenu.classList.remove('open');
         document.body.classList.remove('no-scroll');
       });
+    });
+  }
+
+  // --- ДРОПДАУН ТЕЛЕФОНОВ В ШАПКЕ ---
+  const navPhonesToggle = document.getElementById('navPhonesToggle');
+  const navPhonesDropdown = document.getElementById('navPhonesDropdown');
+
+  if (navPhonesToggle && navPhonesDropdown) {
+    navPhonesToggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 900) return;
+      e.preventDefault();
+      navPhonesDropdown.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navPhonesToggle.contains(e.target) && !navPhonesDropdown.contains(e.target)) {
+        navPhonesDropdown.classList.remove('show');
+      }
     });
   }
 
@@ -156,22 +173,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- МАСКА ТЕЛЕФОНА ТУРКМЕНИСТАНА (+993 ...) ---
-  const phoneInput = document.getElementById('patientPhone');
-  if (phoneInput) {
+  // --- МАСКА ТЕЛЕФОНА ТУРКМЕНИСТАНА (+993 ...) для всех tel-полей ---
+  document.querySelectorAll('input[type="tel"]').forEach(phoneInput => {
     phoneInput.addEventListener('focus', () => {
       if (!phoneInput.value) {
         phoneInput.value = '+993 ';
       }
     });
 
-    phoneInput.addEventListener('input', (e) => {
+    phoneInput.addEventListener('input', () => {
       let val = phoneInput.value.replace(/[^\d+]/g, '');
       if (!val.startsWith('+993')) {
         val = '+993' + val.replace(/^\+?993?/, '');
       }
-      
-      // Форматируем +993 XX XXXXXX
+
+      // Форматируем +993 XX XX-XX-XX
       let digits = val.substring(4);
       let formatted = '+993 ';
       if (digits.length > 0) formatted += digits.substring(0, 2);
@@ -181,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       phoneInput.value = formatted.trim();
     });
-  }
+  });
 
   // --- ВЫБОР МЕССЕНДЖЕРА В ФОРМЕ ---
   const messengerRadios = document.querySelectorAll('.messenger-radio');
@@ -268,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
 📝 *Описание случая:* ${details}
 ⏰ *Время заявки:* ${leadPayload.date}
 ----------------------------------------
-_Источник: INDAYA MED (GitHub Pages)_
+_Источник: ADYL ÇÖZGÜT (GitHub Pages)_
     `.trim();
 
     try {
@@ -285,13 +301,13 @@ _Источник: INDAYA MED (GitHub Pages)_
         });
       } else {
         // Режим симуляции с сохранением в локальное хранилище и логированием
-        console.info('=== [INDAYA MED] ЗАЯВКА УСПЕШНО СФОРМИРОВАНА ===');
+        console.info('=== [ADYL ÇÖZGÜT] ЗАЯВКА УСПЕШНО СФОРМИРОВАНА ===');
         console.table(leadPayload);
         console.info('Чтобы настроить реальную отправку в Telegram, укажите BOT_TOKEN и CHAT_ID в js/main.js');
       }
 
       // Генерация прямой ссылки для WhatsApp (fallback / мгновенное продолжение диалога)
-      const waText = encodeURIComponent(`Здравствуйте! Я оставил заявку на сайте INDAYA Med.\nИмя: ${name}\nТелефон: ${phone}\nНаправление: ${direction}\nКлиника: ${hospital}\nОписание: ${details}`);
+      const waText = encodeURIComponent(`Здравствуйте! Я оставил заявку на сайте ADYL ÇÖZGÜT.\nИмя: ${name}\nТелефон: ${phone}\nНаправление: ${direction}\nКлиника: ${hospital}\nОписание: ${details}`);
       const directWhatsAppUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
 
       // Показываем модалку успеха
@@ -301,7 +317,7 @@ _Источник: INDAYA MED (GitHub Pages)_
             Уважаемый(ая) <strong>${name}</strong>, ваши данные приняты!
           </p>
           <p style="font-size:0.92rem; color:var(--slate); margin-bottom:16px;">
-            Медицинский координатор INDAYA MED свяжется с вами по номеру <strong>${phone}</strong> в течение 15–30 минут через <strong>${messenger}</strong>.
+            Медицинский координатор ADYL ÇÖZGÜT свяжется с вами по номеру <strong>${phone}</strong> в течение 15–30 минут через <strong>${messenger}</strong>.
           </p>
           <div style="background:var(--teal-bg); border:1px solid #ccfbf1; padding:16px; border-radius:var(--radius-md); margin-bottom:20px; text-align:left;">
             <strong style="color:var(--teal-dark); font-size:0.9rem; display:block; margin-bottom:6px;">Что подготовить к беседе с доктором:</strong>
@@ -325,72 +341,135 @@ _Источник: INDAYA MED (GitHub Pages)_
 
     } catch (err) {
       console.error('Ошибка отправки заявки:', err);
-      alert('Заявка принята, но произошла задержка сети. Вы можете прямо сейчас написать нам в WhatsApp или Telegram!');
+      alert('Заявка принята! Вы также можете написать нам напрямую в WhatsApp: +993 65 677550 или позвонить по телефону +993 72 254296.');
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnText;
     }
   });
 
-  // --- ФОНОВЫЙ СЛАЙДЕР АШХАБАДА (Hero, fade) ---
-  const bgSlider = document.getElementById('heroBgSlider');
-  const bgDotsWrap = document.getElementById('bgDots');
-  if (bgSlider && bgDotsWrap) {
-    const slides = bgSlider.querySelectorAll('.bg-slide');
-    const prevBtn = document.getElementById('bgPrev');
-    const nextBtn = document.getElementById('bgNext');
-    let current = 0;
-    let autoplayTimer = null;
+  // --- КОНСУЛЬТАЦИОННАЯ ФОРМА В СЕКЦИИ КЛИНИК ---
+  const consultForm = document.getElementById('consultForm');
 
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', 'Фото ' + (i + 1));
-      dot.addEventListener('click', () => { goTo(i); restartAutoplay(); });
-      bgDotsWrap.appendChild(dot);
-    });
+  consultForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    const dots = bgDotsWrap.querySelectorAll('.gallery-dot');
+    const name = consultForm.querySelector('[name="name"]')?.value.trim();
+    const phone = consultForm.querySelector('[name="phone"]')?.value.trim();
+    const message = consultForm.querySelector('[name="message"]')?.value.trim() || 'Без сообщения';
+    const submitBtn = consultForm.querySelector('[type="submit"]');
 
-    function goTo(index) {
-      current = (index + slides.length) % slides.length;
-      slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
-      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    if (!name || name.length < 2) {
+      alert('Пожалуйста, укажите ваше имя.');
+      consultForm.querySelector('[name="name"]')?.focus();
+      return;
     }
 
-    function restartAutoplay() {
-      clearInterval(autoplayTimer);
-      autoplayTimer = setInterval(() => goTo(current + 1), 4500);
+    if (!phone || phone.replace(/[^\d]/g, '').length < 8) {
+      alert('Пожалуйста, введите корректный номер телефона для связи в Туркменистане.');
+      consultForm.querySelector('[name="phone"]')?.focus();
+      return;
     }
 
-    prevBtn?.addEventListener('click', () => { goTo(current - 1); restartAutoplay(); });
-    nextBtn?.addEventListener('click', () => { goTo(current + 1); restartAutoplay(); });
+    const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Отправляем заявку...';
+    }
 
-    bgSlider.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
-    bgSlider.addEventListener('mouseleave', restartAutoplay);
+    const payload = {
+      name,
+      phone,
+      message,
+      date: new Date().toLocaleString('ru-RU')
+    };
 
-    // Свайп на мобильных
-    let touchStartX = 0;
-    bgSlider.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-    bgSlider.addEventListener('touchend', (e) => {
-      const dx = e.changedTouches[0].screenX - touchStartX;
-      if (Math.abs(dx) > 40) {
-        goTo(dx < 0 ? current + 1 : current - 1);
-        restartAutoplay();
+    const formattedMessage = `
+🏥 *БЫСТРАЯ КОНСУЛЬТАЦИЯ*
+----------------------------------------
+👤 *Имя:* ${name}
+📞 *Телефон:* ${phone}
+📝 *Сообщение:* ${message}
+⏰ *Время заявки:* ${payload.date}
+----------------------------------------
+_Источник: ADYL ÇÖZGÜT (GitHub Pages)_
+    `.trim();
+
+    try {
+      if (TELEGRAM_CONFIG.ENABLED && TELEGRAM_CONFIG.BOT_TOKEN !== 'YOUR_BOT_TOKEN_HERE') {
+        const tgUrl = `https://api.telegram.org/bot${TELEGRAM_CONFIG.BOT_TOKEN}/sendMessage`;
+        await fetch(tgUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CONFIG.CHAT_ID,
+            text: formattedMessage,
+            parse_mode: 'Markdown'
+          })
+        });
+      } else {
+        console.info('=== [ADYL ÇÖZGÜT] КОНСУЛЬТАЦИЯ УСПЕШНО СФОРМИРОВАНА ===');
+        console.table(payload);
+        console.info('Чтобы настроить реальную отправку в Telegram, укажите BOT_TOKEN и CHAT_ID в js/main.js');
       }
-    }, { passive: true });
 
-    // Пауза, если вкладка скрыта
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) clearInterval(autoplayTimer);
-      else restartAutoplay();
+      const waText = encodeURIComponent(`Здравствуйте! Оставил заявку на консультацию на сайте ADYL ÇÖZGÜT.\nИмя: ${name}\nТелефон: ${phone}\nСообщение: ${message}`);
+      const directWhatsAppUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
+
+      if (successModalSummary) {
+        successModalSummary.innerHTML = `
+          <p style="font-size:1.05rem; color:var(--navy); font-weight:700; margin-bottom:10px;">
+            Спасибо, <strong>${name}</strong>! Заявка принята.
+          </p>
+          <p style="font-size:0.92rem; color:var(--slate); margin-bottom:16px;">
+            Медицинский координатор ADYL ÇÖZGÜT свяжется с вами по номеру <strong>${phone}</strong> в течение 15–30 минут.
+          </p>
+          <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+            <a href="${directWhatsAppUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm" style="font-size:0.88rem;">
+              💬 Написать координатору в WhatsApp прямо сейчас
+            </a>
+          </div>
+        `;
+      }
+
+      consultForm.reset();
+      successModal?.classList.add('active');
+      document.body.classList.add('no-scroll');
+    } catch (err) {
+      console.error('Ошибка отправки заявки:', err);
+      alert('Заявка принята! Вы также можете написать нам напрямую в WhatsApp: +993 65 677550 или позвонить по телефону +993 72 254296.');
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
+    }
+  });
+
+  // --- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА RU | TM (туркменская версия готовится) ---
+  const langSwitches = document.querySelectorAll('.lang-switch');
+
+  function setActiveLang(lang) {
+    langSwitches.forEach(group => {
+      group.querySelectorAll('.lang-btn').forEach(btn => {
+        const isActive = btn.dataset.lang === lang;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', String(isActive));
+      });
     });
-
-    restartAutoplay();
   }
+
+  langSwitches.forEach(group => {
+    group.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.dataset.lang === 'ru') {
+          setActiveLang('ru');
+        } else {
+          alert('Туркменская версия сайта готовится к запуску.');
+        }
+      });
+    });
+  });
 
 
   // --- АНИМАЦИИ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ (IntersectionObserver) ---
