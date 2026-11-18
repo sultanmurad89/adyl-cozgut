@@ -226,6 +226,126 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === successModal) closeSuccessModalFunc();
   });
 
+  // --- МОДАЛЬНОЕ ОКНО КЛИНИКИ (кнопки «Подробнее») ---
+  const CLINIC_DATA = {
+    apollo: {
+      name: 'Apollo Hospitals',
+      location: 'Ченнай, Нью-Дели, Бангалор и др.',
+      image: 'assets/img/apollo.jpg',
+      directions: ['Кардиология', 'Онкология', 'Ортопедия', 'Нейрология', 'Трансплантология'],
+      description: 'Apollo — крупнейшая частная госпитальная сеть Индии с более чем 50-летней историей и аккредитацией JCI. В отделениях кардиологии, онкологии и трансплантологии работают хирургические бригады с одним из наибольших опытов в Азии. Пациентам доступны роботизированные операции, точная диагностика и комплексная реабилитация в единой системе клиник.',
+      advantages: [
+        'Аккредитация JCI и международные протоколы лечения',
+        'Собственные центры трансплантации органов',
+        'Опыт сложных кардиохирургических операций',
+        'Сеть клиник — удобный выбор города'
+      ]
+    },
+    medanta: {
+      name: 'Medanta The Medicity',
+      location: 'Гургаон (Дели)',
+      image: 'assets/img/medanta.jpg',
+      directions: ['Онкология', 'Кардиология', 'Нейрохирургия', 'Ортопедия', 'Роботизированная хирургия'],
+      description: 'Medanta The Medicity — один из крупнейших многопрофильных госпиталей Дели-НЦ, основанный известным кардиохирургом Наoем Трейди. Клиника известна операциями на открытом сердце, трансплантацией органов и лечением онкологии по международным протоколам. Здесь проводят вмешательства с применением роботизированной системы и междисциплинарные консилиумы для сложных случаев.',
+      advantages: [
+        'Один из крупнейших госпиталей Дели-НЦ',
+        'Сильная школа кардиохирургии и трансплантологии',
+        'Роботизированная хирургия',
+        'Междисциплинарные консилиумы по сложным случаям'
+      ]
+    },
+    artemis: {
+      name: 'Artemis Hospital',
+      location: 'Гургаон (Дели)',
+      image: 'assets/img/artemis.jpg',
+      directions: ['Онкология', 'Кардиология', 'Ортопедия', 'Нейрохирургия', 'Трансплантология'],
+      description: 'Artemis Hospital — многопрофильная клиника в Гургаоне с аккредитацией JCI, специализирующаяся на онкологии, нейрохирургии и трансплантологии. В госпитале работают отделение роботизированной хирургии и центр точной диагностики. Пациентам из-за рубежа предоставляется полное сопровождение и перевод медицинской документации.',
+      advantages: [
+        'Аккредитация JCI',
+        'Отделение роботизированной хирургии',
+        'Центры онкологии и трансплантологии',
+        'Полное сопровождение иностранных пациентов'
+      ]
+    },
+    fortis: {
+      name: 'Fortis Hospital',
+      location: 'Гургаон, Дели, Мумбаи и др.',
+      image: 'assets/img/fortis.jpg',
+      directions: ['Кардиология', 'Онкология', 'Ортопедия', 'Нейрология', 'Урология'],
+      description: 'Fortis — сеть ведущих клиник Индии, известная кардиохирургией, онкологией и ортопедией. В Memorial Research Institute в Гургаоне проводят шунтирование, замену суставов и нейрохирургические операции под нейронавигацией. Высокий процент успешных операций подтверждён результатами международных регистров.',
+      advantages: [
+        'Сеть клиник в ключевых городах Индии',
+        'Одни из лучших результатов кардиохирургии в Азии',
+        'Эндопротезирование суставов с быстрой реабилитацией',
+        'Нейрохирургия под нейронавигацией'
+      ]
+    },
+    blkmax: {
+      name: 'BLK-MAX Super Speciality Hospital',
+      location: 'Дели',
+      image: 'assets/img/blk.jpg',
+      directions: ['Онкология', 'Кардиология', 'Ортопедия', 'Нейрология', 'Гастроэнтерология'],
+      description: 'BLK-MAX — суперспециализированный госпиталь в центре Дели с мощным онкологическим и кардиологическим направлениями. Клиника оснащена современным оборудованием для точной лучевой терапии без разрезов. Врачи BLK-MAX ведут сложные случаи, включая трансплантацию костного мозга и комбинированное лечение опухолей.',
+      advantages: [
+        'Онкология последнего поколения — точная лучевая терапия',
+        'Трансплантация костного мозга',
+        'Кардиохирургия и интервенционная радиология',
+        'Расположение в центре Дели'
+      ]
+    }
+  };
+
+  const clinicModal = document.getElementById('clinicModal');
+  const closeClinicModalBtn = document.getElementById('closeClinicModal');
+  const clinicModalImg = document.getElementById('clinicModalImg');
+  const clinicModalName = document.getElementById('clinicModalName');
+  const clinicModalLocation = document.getElementById('clinicModalLocation');
+  const clinicModalDirections = document.getElementById('clinicModalDirections');
+  const clinicModalDesc = document.getElementById('clinicModalDesc');
+  const clinicModalAdvantages = document.getElementById('clinicModalAdvantages');
+  const clinicModalCta = document.getElementById('clinicModalCta');
+
+  function closeClinicModalFunc() {
+    clinicModal?.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+  }
+
+  function openClinicModalFunc(key) {
+    const data = CLINIC_DATA[key];
+    if (!data || !clinicModal) return;
+
+    if (clinicModalImg) {
+      clinicModalImg.src = data.image;
+      clinicModalImg.alt = data.name;
+    }
+    if (clinicModalName) clinicModalName.textContent = data.name;
+    if (clinicModalLocation) clinicModalLocation.textContent = data.location;
+    if (clinicModalDirections) {
+      clinicModalDirections.innerHTML = data.directions.map((d) => `<span>${d}</span>`).join('');
+    }
+    if (clinicModalDesc) clinicModalDesc.textContent = data.description;
+    if (clinicModalAdvantages) {
+      clinicModalAdvantages.innerHTML = data.advantages.map((a) => `<li>${a}</li>`).join('');
+    }
+
+    clinicModal.classList.add('active');
+    document.body.classList.add('no-scroll');
+    closeClinicModalBtn?.focus();
+  }
+
+  document.querySelectorAll('.hospital-btn[data-clinic]').forEach((btn) => {
+    btn.addEventListener('click', () => openClinicModalFunc(btn.dataset.clinic));
+  });
+
+  closeClinicModalBtn?.addEventListener('click', closeClinicModalFunc);
+  clinicModal?.addEventListener('click', (e) => {
+    if (e.target === clinicModal) closeClinicModalFunc();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && clinicModal?.classList.contains('active')) closeClinicModalFunc();
+  });
+  clinicModalCta?.addEventListener('click', closeClinicModalFunc);
+
   leadForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
 

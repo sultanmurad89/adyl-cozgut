@@ -128,10 +128,6 @@
 
     <div class="container hero-grid">
       <div class="hero-content">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          <span>Официальный представитель клиник Индии</span>
-        </div>
         <h1 class="hero-title">Лечение в лучших<br>клиниках Индии</h1>
         <p class="hero-lead">
           Компания “Adyl Çözgüt” помогает получить информацию о клиниках, организовать консультации и сопровождение на всех этапах лечения.
@@ -146,13 +142,17 @@
 
         <!-- Mobile photo card (shown on tablets & smartphones) -->
         <div class="hero-mobile-visual">
-          <img src="assets/img/hero-banner-mobile.jpg" alt="Лечение в клиниках Индии — Adyl Çözgüt" width="1176" height="576" fetchpriority="high">
+          <img src="assets/img/hero-banner-mobile.jpg" alt="Лечение в клиниках Индии — Adyl Çözгут" width="1176" height="576" fetchpriority="high">
+          <span class="hero-script-mobile" aria-hidden="true">Здоровье<br>не знает границ</span>
         </div>
       </div>
 
       <!-- Desktop visual placeholder to balance the grid -->
       <div class="hero-visual-desktop" aria-hidden="true"></div>
     </div>
+
+    <!-- Handwritten slogan over the right photo (desktop) -->
+    <div class="hero-script" aria-hidden="true">Здоровье<br>не знает границ</div>
 
     <!-- Trust Strip -->
     <div class="trust-strip">
@@ -214,7 +214,7 @@
                   <li>Трансплантология</li>
                 </ul>
               </div>
-              <a href="https://www.apollohospitals.com/ru/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm hospital-btn">Подробнее <span aria-hidden="true">→</span></a>
+              <button type="button" class="btn btn-primary btn-sm hospital-btn" data-clinic="apollo">Подробнее <span aria-hidden="true">→</span></button>
             </div>
           </article>
 
@@ -237,7 +237,7 @@
                   <li>Роботизированная хирургия</li>
                 </ul>
               </div>
-              <a href="https://www.medanta.org/ru/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm hospital-btn">Подробнее <span aria-hidden="true">→</span></a>
+              <button type="button" class="btn btn-primary btn-sm hospital-btn" data-clinic="medanta">Подробнее <span aria-hidden="true">→</span></button>
             </div>
           </article>
 
@@ -260,7 +260,7 @@
                   <li>Трансплантология</li>
                 </ul>
               </div>
-              <a href="https://www.artemishospitals.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm hospital-btn">Подробнее <span aria-hidden="true">→</span></a>
+              <button type="button" class="btn btn-primary btn-sm hospital-btn" data-clinic="artemis">Подробнее <span aria-hidden="true">→</span></button>
             </div>
           </article>
 
@@ -283,7 +283,7 @@
                   <li>Урология</li>
                 </ul>
               </div>
-              <a href="https://ru.bookimed.com/clinic/fortis-hospital/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm hospital-btn">Подробнее <span aria-hidden="true">→</span></a>
+              <button type="button" class="btn btn-primary btn-sm hospital-btn" data-clinic="fortis">Подробнее <span aria-hidden="true">→</span></button>
             </div>
           </article>
 
@@ -306,86 +306,10 @@
                   <li>Гастроэнтерология</li>
                 </ul>
               </div>
-              <a href="https://www.blkmaxhospital.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm hospital-btn">Подробнее <span aria-hidden="true">→</span></a>
+              <button type="button" class="btn btn-primary btn-sm hospital-btn" data-clinic="blkmax">Подробнее <span aria-hidden="true">→</span></button>
             </div>
           </article>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Medical Directions -->
-  <section class="directions-section" id="directions">
-    <div class="container">
-      <div class="section-head-row fade-up">
-        <h2 class="section-title">Медицинские направления</h2>
-        <a href="#leadSection" class="section-link-all">Все направления <span aria-hidden="true">→</span></a>
-      </div>
-
-      <div class="directions-grid">
-        <a href="#leadSection" class="direction-tile fade-up">
-          <span class="direction-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path><line x1="4.5" y1="12.5" x2="19.5" y2="12.5"></line></svg>
-          </span>
-          <span class="direction-name">Кардиология</span>
-          <span class="direction-desc">Лечение сердца и сосудов</span>
-        </a>
-
-        <a href="#leadSection" class="direction-tile fade-up">
-          <span class="direction-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 21c1-4.5 3.8-7 5.5-8-2-2-3-6-1.5-8.5a2.4 2.4 0 0 1 4 0C16 7 15 11 13 13c1.7 1 4.5 3.5 5.5 8"></path></svg>
-          </span>
-          <span class="direction-name">Онкология</span>
-          <span class="direction-desc">Современные методы диагностики и лечения</span>
-        </a>
-
-        <a href="#leadSection" class="direction-tile fade-up">
-          <span class="direction-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5.2" cy="17.8" r="2.3"></circle><circle cx="8.4" cy="20.6" r="2.3"></circle><circle cx="18.8" cy="6.2" r="2.3"></circle><circle cx="15.6" cy="3.4" r="2.3"></circle><line x1="7" y1="16.4" x2="17" y2="7.6"></line></svg>
-          </span>
-          <span class="direction-name">Ортопедия</span>
-          <span class="direction-desc">Заболевания суставов и костей</span>
-        </a>
-
-        <a href="#leadSection" class="direction-tile fade-up">
-          <span class="direction-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5c-1.5-1.3-3.7-1.6-5.4-.6C4.7 5.5 4 7.2 4.2 9c-.8.8-1.2 1.9-1.1 3 .1 1.2.7 2.3 1.6 3 .3 1.5 1.5 2.7 3 3 1.3.7 2.8.7 4.1 0V5z"></path><path d="M12 5c1.5-1.3 3.7-1.6 5.4-.6C19.3 5.5 20 7.2 19.8 9c.8.8 1.2 1.9 1.1 3-.1 1.2-.7 2.3-1.6 3-.3 1.5-1.5 2.7-3 3-1.3.7-2.8.7-4.1 0"></path><line x1="12" y1="5" x2="12" y2="20"></line></svg>
-          </span>
-          <span class="direction-name">Неврология</span>
-          <span class="direction-desc">Заболевания нервной системы</span>
-        </a>
-
-        <a href="#leadSection" class="direction-tile fade-up">
-          <span class="direction-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-1.3-1.1-3.2-1.4-4.7-.5C5.8 6.3 5.2 7.8 5.4 9.3c-.7.7-1 1.6-.9 2.5.1 1 .6 2 1.4 2.6.3 1.3 1.3 2.3 2.6 2.6 1.1.6 2.4.6 3.5 0V6z"></path><path d="M12 6c1.3-1.1 3.2-1.4 4.7-.5 1.5.8 2.1 2.3 1.9 3.8.7.7 1 1.6.9 2.5-.1 1-.6 2-1.4 2.6-.3 1.3-1.3 2.3-2.6 2.6-1.1.6-2.4.6-3.5 0"></path><line x1="12" y1="6" x2="12" y2="19"></line><path d="M18.5 3v3.4M16.8 4.7h3.4"></path></svg>
-          </span>
-          <span class="direction-name">Нейрохирургия</span>
-          <span class="direction-desc">Хирургия головного и спинного мозга</span>
-        </a>
-
-        <a href="#leadSection" class="direction-tile fade-up">
-          <span class="direction-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4.5C7 4.5 4.8 7 4.8 10.6S6.8 20 10 20c1.8 0 2.7-1.4 2.6-3.2-.1-1.6-.9-2.7-.9-5 0-2.3.9-4.1-.9-5-.6-.3-1.2-.4-1.8-.4z"></path><path d="M14 4.5c3 0 5.2 2.5 5.2 6.1S17.2 20 14 20c-1.8 0-2.7-1.4-2.6-3.2.1-1.6.9-2.7.9-5 0-2.3-.9-4.1.9-5 .6-.3 1.2-.4 1.8-.4z"></path></svg>
-          </span>
-          <span class="direction-name">Урология</span>
-          <span class="direction-desc">Заболевания мочеполовой системы</span>
-        </a>
-
-        <a href="#leadSection" class="direction-tile fade-up">
-          <span class="direction-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 4v5.2a5.6 5.6 0 0 0 5.4 5.7h.6a4.4 4.4 0 0 1 4.4 4.4v.6a2.9 2.9 0 0 1-2.9 2.9c-2.8 0-4.8-2.2-5-5-.1-1.4.3-2.4 1.1-3.2"></path><path d="M7.5 4c-2.1.5-3.7 2.4-3.7 4.8"></path></svg>
-          </span>
-          <span class="direction-name">Гастроэнтерология</span>
-          <span class="direction-desc">Заболевания ЖКТ</span>
-        </a>
-
-        <a href="#leadSection" class="direction-tile fade-up">
-          <span class="direction-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9.2c-1-1.9-3.4-2.5-4.8-1.1S5.8 12 7.2 13.4L12 17.5l4.8-4.1c1.4-1.4 1.4-3.7 0-5.3s-3.8-1-4.8 1.1z"></path><path d="M4 16.5c1.5 2.4 4.6 3.9 8 3.9s6.5-1.5 8-3.9"></path></svg>
-          </span>
-          <span class="direction-name">Трансплантология</span>
-          <span class="direction-desc">Пересадка органов и тканей</span>
-        </a>
       </div>
     </div>
   </section>
@@ -402,9 +326,6 @@
             «Компания “Adyl Çözgüt” — ваш информационный и организационный помощник при обращении в клиники Индии.»
           </p>
         </div>
-        <p class="section-subtitle">
-          Мы избавляем пациентов и их близких от страха перед поездкой в незнакомую страну, гарантируя полную правовую чистоту, медицинскую заботу и поддержку на каждом этапе.
-        </p>
       </div>
 
       <div class="advantages-grid">
@@ -579,92 +500,6 @@
   <!-- Section: Consultation Form & Direct Contacts -->
   <section class="contact-section" id="leadSection">
     <div class="container contact-grid">
-      <!-- Left: Consultation Form -->
-      <div class="form-wrapper">
-        <div class="form-heading">
-          <span class="section-badge">Бесплатный расчет</span>
-          <h3>Получите предварительный план лечения и смету от врачей Индии</h3>
-          <p>Заполните форму — наш координатор свяжется с вами, ответит на вопросы и организует передачу документов профессорам клиник.</p>
-        </div>
-
-        <form class="lead-form" id="leadForm">
-          <div class="form-group">
-            <label class="form-label" for="patientName">Имя пациента или контактного лица <span>*</span></label>
-            <input type="text" id="patientName" class="form-input" placeholder="Например: Мердан Аннаев" required>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="patientPhone">Номер телефона в Туркменистане <span>*</span></label>
-            <input type="tel" id="patientPhone" class="form-input" placeholder="+993 72 254296" required>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Предпочтительный канал для связи и отправки сметы <span>*</span></label>
-            <div class="messenger-selector">
-              <label class="messenger-radio selected">
-                <input type="radio" name="preferred_messenger" value="WhatsApp" checked>
-                <span>WhatsApp</span>
-              </label>
-              <label class="messenger-radio">
-                <input type="radio" name="preferred_messenger" value="Imo">
-                <span>Imo</span>
-              </label>
-              <label class="messenger-radio">
-                <input type="radio" name="preferred_messenger" value="Instagram">
-                <span>Instagram</span>
-              </label>
-              <label class="messenger-radio">
-                <input type="radio" name="preferred_messenger" value="Телефонный звонок">
-                <span>Звонок</span>
-              </label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="treatmentDirectionSelect">Направление лечения</label>
-            <select id="treatmentDirectionSelect" class="form-select">
-              <option value="Трансплантация органов (печень, почки)">Трансплантация органов (печень, почки)</option>
-              <option value="Онкология и онкогематология (опухоли, ТКМ)">Онкология и онкогематология (опухоли, ТКМ)</option>
-              <option value="Кардиохирургия (шунтирование, клапаны, стентирование)">Кардиохирургия (шунтирование, клапаны, стентирование)</option>
-              <option value="Ортопедия (эндопротезирование суставов)">Ортопедия (эндопротезирование суставов)</option>
-              <option value="Нейрохирургия и позвоночник">Нейрохирургия и позвоночник</option>
-              <option value="Педиатрия и редкие заболевания">Педиатрия и редкие заболевания</option>
-              <option value="Другой сложный случай / Диагностика">Другой сложный случай / Диагностика</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="preferredHospitalSelect">Предпочтительная клиника</label>
-            <select id="preferredHospitalSelect" class="form-select">
-              <option value="Не выбрана (подберите оптимальную по цене и опыту)">Не выбрана (подберите оптимальную по цене и опыту)</option>
-              <option value="Medanta The Medicity (Гургаон)">Medanta The Medicity (Гургаон)</option>
-              <option value="Apollo Hospitals (Дели / Ченнаи)">Apollo Hospitals (Дели / Ченнаи)</option>
-              <option value="Fortis Memorial Research Institute (Гургаон)">Fortis Memorial Research Institute (Гургаон)</option>
-              <option value="Max Super Speciality Hospital (Дели)">Max Super Speciality Hospital (Дели)</option>
-              <option value="Manipal Hospitals (Дели / Бангалор)">Manipal Hospitals (Дели / Бангалор)</option>
-              <option value="Artemis Hospital (Гургаон)">Artemis Hospital (Гургаон)</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="patientDetails">Кратко опишите диагноз или текущую ситуацию</label>
-            <textarea id="patientDetails" class="form-textarea" placeholder="Например: Установлен диагноз цирроз печени, ищем клинику для пересадки. Есть родной брат в качестве донора, анализы на руках."></textarea>
-          </div>
-
-          <div class="form-consent">
-            <input type="checkbox" id="consentCheck" checked required>
-            <label for="consentCheck">
-              Согласен на конфиденциальную обработку медицинских данных для консультации с врачами клиник Индии.
-            </label>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-block" id="leadSubmitBtn">
-            Получить программу лечения и смету
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </button>
-        </form>
-      </div>
-
       <!-- Right: Contacts & Regional Coverage -->
       <div class="contact-sidebar">
         <div class="contact-card">
@@ -754,7 +589,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             </span>
             <span class="address-text">
-              Беркарарлыкский этрап, Туркменистан, улица Кулиева (Объездная), здание № 64, «Turkmen Deri»
+              Туркменистан, город Ашхабад, улица (Объездная), здание "Turkmen Deri"
             </span>
           </a>
           <a href="https://maps.app.goo.gl/M8QPW423nq8SNQe16" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm address-map-btn">
@@ -763,25 +598,6 @@
           </a>
         </div>
 
-        <!-- Regional Coverage Box -->
-        <div class="geo-coverage-box">
-          <div class="geo-title">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-            <span>Работаем по всему Туркменистану</span>
-          </div>
-          <p class="geo-desc">
-            Организуем дистанционную консультацию и оформление документов для жителей любого велаята без необходимости личного приезда в столицу.
-          </p>
-          <div class="geo-cities">
-            <span class="geo-city-chip">г. Ашхабад</span>
-            <span class="geo-city-chip">Ахалский велаят</span>
-            <span class="geo-city-chip">г. Мары</span>
-            <span class="geo-city-chip">г. Туркменабат</span>
-            <span class="geo-city-chip">г. Дашогуз</span>
-            <span class="geo-city-chip">г. Балканабат</span>
-            <span class="geo-city-chip">г. Туркменбаши</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -813,7 +629,7 @@
             <li>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
               <a href="https://maps.app.goo.gl/M8QPW423nq8SNQe16" target="_blank" rel="noopener noreferrer">
-                Беркарарлыкский этрап, Туркменистан, улица Кулиева (Объездная), здание № 64, «Turkmen Deri»
+                Туркменистан, город Ашхабад, улица (Объездная), здание "Turkmen Deri"
               </a>
             </li>
             <li>
@@ -913,6 +729,43 @@
         <div id="successModalSummary">
           <!-- Injected via main.js -->
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clinic Details Modal -->
+  <div class="modal-overlay" id="clinicModal" role="dialog" aria-modal="true" aria-labelledby="clinicModalName">
+    <div class="modal-window clinic-modal-window">
+      <button type="button" class="modal-close-btn" id="closeClinicModal" aria-label="Закрыть">✕</button>
+      <div class="clinic-modal-hero">
+        <img id="clinicModalImg" src="assets/img/apollo.jpg" alt="" width="900" height="496">
+      </div>
+      <div class="clinic-modal-body">
+        <h3 class="clinic-modal-name" id="clinicModalName">Клиника</h3>
+        <p class="clinic-modal-location">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span id="clinicModalLocation"></span>
+        </p>
+
+        <div class="clinic-modal-section">
+          <h4 class="clinic-modal-label">Основные направления лечения</h4>
+          <div class="clinic-modal-chips" id="clinicModalDirections"></div>
+        </div>
+
+        <div class="clinic-modal-section">
+          <h4 class="clinic-modal-label">О клинике</h4>
+          <p class="clinic-modal-desc" id="clinicModalDesc"></p>
+        </div>
+
+        <div class="clinic-modal-section">
+          <h4 class="clinic-modal-label">Преимущества</h4>
+          <ul class="clinic-modal-advantages" id="clinicModalAdvantages"></ul>
+        </div>
+
+        <a href="#leadSection" class="btn btn-primary clinic-modal-cta" id="clinicModalCta">
+          Получить консультацию по этой клинике
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
       </div>
     </div>
   </div>
