@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // WhatsApp номер по умолчанию для Туркменистана / координаторов (без знака +)
-  const WHATSAPP_NUMBER = '99365677550'; // Номер координатора в Туркменистане
+  const WHATSAPP_NUMBER = '99365639410'; // Номер координатора в Туркменистане
 
 
   // --- МОБИЛЬНОЕ МЕНЮ (БУРГЕР) ---
@@ -556,7 +556,7 @@ _Источник: ADYL ÇÖZGÜT (GitHub Pages)_
 
     } catch (err) {
       console.error('Ошибка отправки заявки:', err);
-      alert('Заявка принята! Вы также можете написать нам напрямую в WhatsApp: +993 65 677550 или позвонить по телефону +993 72 254296.');
+      alert('Заявка принята! Вы также можете написать нам напрямую в WhatsApp: +993 65 39410 или позвонить по телефону +993 72 254296.');
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnText;
@@ -652,7 +652,7 @@ _Источник: ADYL ÇÖZGÜT (GitHub Pages)_
       document.body.classList.add('no-scroll');
     } catch (err) {
       console.error('Ошибка отправки заявки:', err);
-      alert('Заявка принята! Вы также можете написать нам напрямую в WhatsApp: +993 65 677550 или позвонить по телефону +993 72 254296.');
+      alert('Заявка принята! Вы также можете написать нам напрямую в WhatsApp: +993 65 39410 или позвонить по телефону +993 72 254296.');
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;

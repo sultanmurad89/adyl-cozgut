@@ -29,7 +29,7 @@
      - `+993 64 333698`
    - **Email:** `Adylcozgut@gmail.com`
    - **Мессенджеры:**
-     - **WhatsApp:** Adylcozgut (`+993 65 677550`)
+     - **WhatsApp:** Adylcozgut (`+993 65 39410`)
      - **Instagram:** Adylcozgut (`@adylcozgut`)
      - **Imo:** Adylcozgut (`+993 72 254296`)
    - **Адрес офиса:** Туркменистан, город Ашхабад, улица (Объездная), здание "Turkmen Deri".
