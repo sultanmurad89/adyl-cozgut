@@ -405,6 +405,44 @@ ul, ol {
   font-size: 0.75rem;
 }
 
+/* Языковой переключатель в шапке — заметный, «таблетки» */
+.header-lang {
+  gap: 6px;
+}
+
+.header-lang .lang-btn {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--slate);
+  padding: 7px 12px;
+  border: 1px solid var(--slate-border);
+  border-radius: 999px;
+  background: #ffffff;
+  transition: var(--transition);
+}
+
+.header-lang .lang-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #ffffff;
+}
+
+.header-lang .lang-btn:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.header-lang .lang-btn.active:hover {
+  background: var(--gold-hover);
+  border-color: var(--gold-hover);
+  color: #ffffff;
+}
+
+.header-lang .lang-sep {
+  display: none;
+}
+
 /* Header phone */
 .nav-phone {
   display: inline-flex;
@@ -726,7 +764,7 @@ ul, ol {
 
 .hospitals-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 
@@ -2657,20 +2695,40 @@ ul, ol {
   height: 18px;
 }
 
+.footer-lang {
+  gap: 8px;
+}
+
 .footer-lang .lang-btn {
-  color: #7f97b3;
+  color: #9db3cc;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border: 1px solid #3f5878;
+  border-radius: 999px;
+  transition: var(--transition);
 }
 
 .footer-lang .lang-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
   color: #ffffff;
 }
 
 .footer-lang .lang-btn:hover {
   color: #edc67e;
+  border-color: #edc67e;
+}
+
+.footer-lang .lang-btn.active:hover {
+  background: var(--gold-hover);
+  border-color: var(--gold-hover);
+  color: #ffffff;
 }
 
 .footer-lang .lang-sep {
-  color: #3f5878;
+  display: none;
 }
 
 .footer-disclaimer {
