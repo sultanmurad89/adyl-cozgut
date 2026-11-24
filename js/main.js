@@ -295,8 +295,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     shalby: {
       name: 'Shalby International Hospitals',
-      location: 'Ахмедабад, Гуджарат и др.',
-      image: 'assets/img/shalby.jpg',
+      location: 'Дели',
+      image: 'assets/img/shalby.png',
       directions: ['Ортопедия', 'Кардиология', 'Онкология', 'Нейрология', 'Нефрология'],
       description: 'Shalby International Hospitals — сеть из 16 многопрофильных клиник в 13 городах Индии, крупнейший центр в Ахмедабаде (Гуджарат), основанный ортопедом доктором Викрамом Шахом. Клиника считается мировым лидером эндопротезирования: за 30 лет выполнено более 145 000 операций на суставах, а собственная методика «Zero Technique» сокращает операцию замены колена до 8–10 минут. Пациентам доступны кардиология, онкология, нейрология и нефрология с диагностикой и реабилитацией в едином комплексе.',
       advantages: [
@@ -314,12 +314,12 @@ document.addEventListener('DOMContentLoaded', () => {
       location: 'Çennaý, Nýu-Deli, Bangalor we beýleki şäherler',
       image: 'assets/img/apollo.jpg',
       directions: ['Kardiologiýa', 'Onkologiýa', 'Ortopediýa', 'Newrologiýa', 'Transplantologiýa'],
-      description: 'Apollo — 50 ýyldan gowrak taryhy we JCI akkreditasiýasy bolan Hindistanyň iň iri hususy hassahanalar ulgamydyr. Kardiologiýa, onkologiýa we transplantologiýa bölümlerinde Aziýada iň uly tejribä eýe bolan hirurgiki toparlar işleýär. Näsaglar üçin robotlaşdyrylan hirurgiki operasiýalar, ýokary takyklykly anyklaýyş we bitewi hassahanalar ulgamynda toplumlaýyn dikeldiş hyzmatlary elýeterlidir.',
+      description: 'Apollo — 50 ýyldan gowrak taryhy we JCI akkreditasiýasy bolan Hindistanyň iň iri hususy klinikalar ulgamydyr. Kardiologiýa, onkologiýa we transplantologiýa bölümlerinde Aziýada iň uly tejribä eýe bolan hirurgiki toparlar işleýär. Näsaglar üçin robotlaşdyrylan hirurgiki operasiýalar, ýokary takyklykly anyklaýyş we bitewi klinikalar ulgamynda toplumlaýyn dikeldiş hyzmatlary elýeterlidir.',
       advantages: [
         'JCI akkreditasiýasy we halkara bejergi standartlary',
         'Organ transplantasiýasy boýunça öz merkezleri',
         'Çylşyrymly ýürek operasiýalaryny geçirmekde uly tejribe',
-        'Hassahanalar ulgamy — şäheri saýlamak üçin giň mümkinçilikler'
+        'Klinikalar ulgamy — şäheri saýlamak üçin giň mümkinçilikler'
       ]
     },
     medanta: {
@@ -327,9 +327,9 @@ document.addEventListener('DOMContentLoaded', () => {
       location: 'Gurgaon (Deli)',
       image: 'assets/img/medanta.jpg',
       directions: ['Onkologiýa', 'Kardiologiýa', 'Neýrohirurgiýa', 'Ortopediýa', 'Robotlaşdyrylan hirurgiýa'],
-      description: 'Medanta The Medicity — Deli Milli paýtagt sebitindäki iň iri köpugurly hassahanalaryň biridir. Ol meşhur ýürek hirurgy Naоem Treýdi tarapyndan esaslandyrylypdyr. Hassahana açyk ýürek operasiýalary, organ transplantasiýasy we halkara bejergi standartlaryna laýyklykda onkologik keselleri bejermek boýunça giňden tanalýar. Bu ýerde robotlaşdyrylan hirurgiýa ulgamlary arkaly operasiýalar geçirilýär, şeýle hem çylşyrymly ýagdaýlar boýunça dürli ugurlaryň hünärmenleriniň gatnaşmagynda bilelikdäki lukmançylyk maslahatlary guralýar.',
+      description: 'Medanta The Medicity — Deli Milli paýtagt sebitindäki iň iri köpugurly klinikalaryň biridir. Ol meşhur ýürek hirurgy Naоem Treýdi tarapyndan esaslandyrylypdyr. Klinika açyk ýürek operasiýalary, organ transplantasiýasy we halkara bejergi standartlaryna laýyklykda onkologik keselleri bejermek boýunça giňden tanalýar. Bu ýerde robotlaşdyrylan hirurgiýa ulgamlary arkaly operasiýalar geçirilýär, şeýle hem çylşyrymly ýagdaýlar boýunça dürli ugurlaryň hünärmenleriniň gatnaşmagynda bilelikdäki lukmançylyk maslahatlary guralýar.',
       advantages: [
-        'Deli Milli paýtagt sebitindäki iň iri hassahanalaryň biri',
+        'Deli Milli paýtagt sebitindäki iň iri klinikalaryň biri',
         'Ýürek hirurgiýasy we transplantologiýa boýunça güýçli hünärmenler topary',
         'Robotlaşdyrylan hirurgiýa',
         'Çylşyrymly ýagdaýlar boýunça dürli ugurlaryň hünärmenleriniň bilelikdäki maslahatlary'
@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
       location: 'Gurgaon (Deli)',
       image: 'assets/img/artemis.jpg',
       directions: ['Onkologiýa', 'Kardiologiýa', 'Ortopediýa', 'Neýrohirurgiýa', 'Transplantologiýa'],
-      description: 'Artemis Hospital — Gurgaon şäherinde ýerleşýän, JCI akkreditasiýaly köpugurly hassahana bolup, onkologiýa, neýrohirurgiýa we transplantologiýa ugurlaryna ýöriteleşendir. Hassahanada robotlaşdyrylan hirurgiýa bölümi we ýokary takyklykly anyklaýyş merkezi hereket edýär. Daşary ýurtly näsaglara ähli tapgyrlarda guramaçylyk goldawy berilýär we lukmançylyk resminamalarynyň terjimesi üpjün edilýär.',
+      description: 'Artemis Hospital — Gurgaon şäherinde ýerleşýän, JCI akkreditasiýaly köpugurly klinika bolup, onkologiýa, neýrohirurgiýa we transplantologiýa ugurlaryna ýöriteleşendir. Klinikada robotlaşdyrylan hirurgiýa bölümi we ýokary takyklykly anyklaýyş merkezi hereket edýär. Daşary ýurtly näsaglara ähli tapgyrlarda guramaçylyk goldawy berilýär we lukmançylyk resminamalarynyň terjimesi üpjün edilýär.',
       advantages: [
         'JCI akkreditasiýasy',
         'Robotlaşdyrylan hirurgiýa bölümi',
@@ -353,9 +353,9 @@ document.addEventListener('DOMContentLoaded', () => {
       location: 'Gurgaon, Deli, Mumbaý we beýleki şäherler',
       image: 'assets/img/fortis.jpg',
       directions: ['Kardiologiýa', 'Onkologiýa', 'Ortopediýa', 'Newrologiýa', 'Urologiýa'],
-      description: 'Fortis — ýürek hirurgiýasy, onkologiýa we ortopediýa ugurlary bilen tanalýan Hindistanyň öňdebaryjy hassahanalar ulgamydyr. Gurgaon şäherindäki Memorial Research Institute merkezinde koronar şuntirleme operasiýalary, bogunlary çalyşmak we neýronawigasiýa ulgamynyň kömegi bilen neýrohirurgiki operasiýalar geçirilýär. Operasiýalaryň ýokary üstünlik görkezijileri halkara registrleriniň netijeleri bilen tassyklanýar.',
+      description: 'Fortis — ýürek hirurgiýasy, onkologiýa we ortopediýa ugurlary bilen tanalýan Hindistanyň öňdebaryjy klinikalar ulgamydyr. Gurgaon şäherindäki Memorial Research Institute merkezinde koronar şuntirleme operasiýalary, bogunlary çalyşmak we neýronawigasiýa ulgamynyň kömegi bilen neýrohirurgiki operasiýalar geçirilýär. Operasiýalaryň ýokary üstünlik görkezijileri halkara registrleriniň netijeleri bilen tassyklanýar.',
       advantages: [
-        'Hindistanyň esasy şäherlerinde ýerleşýän hassahanalar ulgamy',
+        'Hindistanyň esasy şäherlerinde ýerleşýän klinikalar ulgamy',
         'Aziýada ýürek hirurgiýasy boýunça iň gowy netijeleriň biri',
         'Bogunlary endoprotez bilen çalyşmak we gysga möhletde dikeldiş',
         'Neýronawigasiýa ulgamynyň kömegi bilen geçirilýän neýrohirurgiýa'
@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
       location: 'Deli',
       image: 'assets/img/blk.jpg',
       directions: ['Onkologiýa', 'Kardiologiýa', 'Ortopediýa', 'Newrologiýa', 'Gastroenterologiýa'],
-      description: 'BLK-MAX — Deliniň merkezinde ýerleşýän, onkologiýa we kardiologiýa ugurlary ýokary derejede ösen ýöriteleşdirilen hassahanadyr. Hassahana kesiksiz takyk şöhle terapiýasyny geçirmek üçin döwrebap enjamlar bilen üpjün edilendir. BLK-MAX lukmanlary süňk ýiliginiň transplantasiýasy we çişleri bejermegiň utgaşdyrylan usullary ýaly çylşyrymly lukmançylyk ýagdaýlary bilen iş alyp barýarlar.',
+      description: 'BLK-MAX — Deliniň merkezinde ýerleşýän, onkologiýa we kardiologiýa ugurlary ýokary derejede ösen ýöriteleşdirilen klinikadyr. Klinika kesiksiz takyk şöhle terapiýasyny geçirmek üçin döwrebap enjamlar bilen üpjün edilendir. BLK-MAX lukmanlary süňk ýiliginiň transplantasiýasy we çişleri bejermegiň utgaşdyrylan usullary ýaly çylşyrymly lukmançylyk ýagdaýlary bilen iş alyp barýarlar.',
       advantages: [
         'Iň döwrebap onkologik bejergi — ýokary takyklykly şöhle terapiýasy',
         'Süňk ýiliginiň transplantasiýasy',
@@ -376,13 +376,13 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     shalby: {
       name: 'Shalby International Hospitals',
-      location: 'Ahmedabat, Gujarat we beýleki şäherler',
-      image: 'assets/img/shalby.jpg',
+      location: 'Deli',
+      image: 'assets/img/shalby.png',
       directions: ['Ortopediýa', 'Kardiologiýa', 'Onkologiýa', 'Newrologiýa', 'Nefrologiýa'],
-      description: 'Shalby International Hospitals — Hindistanyň 13 şäherinde ýerleşýän 16 sany köpugurly hassahanadan ybarat ulgamdyr. Onuň iň iri merkezi Gujarat ştatynyň Ahmedabat şäherinde ýerleşýär. Bu hassahana ortoped lukmany doktor Wikram Şah tarapyndan esaslandyrylypdyr. Shalby bogunlary endoprotez bilen çalyşmak boýunça dünýäde öňdebaryjy merkezleriň biri hasaplanýar: 30 ýylyň dowamynda bogunlarda 145 000-den gowrak operasiýa geçirilipdir. Hassahananyň özboluşly «Zero Technique» usuly dyz bogunyny çalyşmak operasiýasynyň dowamlylygyny 8–10 minuta çenli gysgaltmaga mümkinçilik berýär. Mundan başga-da, näsaglara kardiologiýa, onkologiýa, newrologiýa we nefrologiýa ugurlary boýunça anyklaýyş hem-de dikeldiş hyzmatlary bir bitewi merkezde hödürlenýär.',
+      description: 'Shalby International Hospitals — Hindistanyň 13 şäherinde ýerleşýän 16 sany köpugurly klinikadan ybarat ulgamdyr. Onuň iň iri merkezi Gujarat ştatynyň Ahmedabat şäherinde ýerleşýär. Bu klinika ortoped lukmany doktor Wikram Şah tarapyndan esaslandyrylypdyr. Shalby bogunlary endoprotez bilen çalyşmak boýunça dünýäde öňdebaryjy merkezleriň biri hasaplanýar: 30 ýylyň dowamynda bogunlarda 145 000-den gowrak operasiýa geçirilipdir. Klinikanyň özboluşly «Zero Technique» usuly dyz bogunyny çalyşmak operasiýasynyň dowamlylygyny 8–10 minuta çenli gysgaltmaga mümkinçilik berýär. Mundan başga-da, näsaglara kardiologiýa, onkologiýa, newrologiýa we nefrologiýa ugurlary boýunça anyklaýyş hem-de dikeldiş hyzmatlary bir bitewi merkezde hödürlenýär.',
       advantages: [
         'Bogunlary endoprotez bilen çalyşmak boýunça dünýäde öňdebaryjy merkez',
-        'Hindistanyň 13 şäherinde ýerleşýän 16 hassahanadan ybarat ulgam',
+        'Hindistanyň 13 şäherinde ýerleşýän 16 klinikadan ybarat ulgam',
         'Zero Technique usuly — operasiýa 8–10 minutda',
         '30 000-den gowrak bejergi alan daşary ýurtly näsag'
       ]
@@ -523,7 +523,7 @@ _Источник: ADYL ÇÖZGÜT (GitHub Pages)_
 
       // Генерация прямой ссылки для WhatsApp (fallback / мгновенное продолжение диалога)
       const waText = encodeURIComponent(`Здравствуйте! Я оставил заявку на сайте ADYL ÇÖZGÜT.\nИмя: ${name}\nТелефон: ${phone}\nНаправление: ${direction}\nКлиника: ${hospital}\nОписание: ${details}`);
-      const directWhatsAppUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
+      const directWhatsAppUrl = `https://wa.me/${WHATSAPP_NUMBER}`;
 
       // Показываем модалку успеха
       if (successModalSummary) {
@@ -629,7 +629,7 @@ _Источник: ADYL ÇÖZGÜT (GitHub Pages)_
       }
 
       const waText = encodeURIComponent(`Здравствуйте! Оставил заявку на консультацию на сайте ADYL ÇÖZGÜT.\nИмя: ${name}\nТелефон: ${phone}\nСообщение: ${message}`);
-      const directWhatsAppUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
+      const directWhatsAppUrl = `https://wa.me/${WHATSAPP_NUMBER}`;
 
       if (successModalSummary) {
         successModalSummary.innerHTML = `
